@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Permutations</string>
-    <string name="textView">Ciao!</string>
+    <string name="textView">Benvenuto!</string>
     <string name="textView02">Inserisci il 1o numero</string>
     <string name="textView03">Inserisci il 2o numero</string>
     <string name="textView04">Numero degli elementi (n)</string>

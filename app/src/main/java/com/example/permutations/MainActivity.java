@@ -16,12 +16,14 @@ public class MainActivity extends AppCompatActivity{
     public Button enterButton;
     PermutationsNumber permNum = new PermutationsNumber(1, 1);
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         radioGroup=findViewById(R.id.radioGroup);
         inputTextNumber = findViewById(R.id.inputTextNumber);
+        //inputTextNumber.setSelection(inputTextNumber.length()); //place the cursor at right?
         inputTextNumber2 = findViewById(R.id.inputTextNumber2);
         textViewResult = findViewById(R.id.textview_result);
         enterButton = findViewById(R.id.button_result);
@@ -33,7 +35,10 @@ public class MainActivity extends AppCompatActivity{
             permNum.setPositionsNumber(num2);
 
             if (radioButtonSelection.isChecked()) {
-                textViewResult.setText(String.valueOf(permNum.getWithoutRep()));
+                if (num1 < num2) {
+                    textViewResult.setText("n < k !!!");} else {
+                    textViewResult.setText(String.valueOf(permNum.getWithoutRep()));
+                }
             } else {
                 textViewResult.setText(String.valueOf(permNum.getWithRep()));
             }
