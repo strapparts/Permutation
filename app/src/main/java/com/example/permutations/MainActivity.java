@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity{
 
     private EditText inputTextNumber, inputTextNumber2;
     private TextView textViewResult;
-    public RadioGroup radioGroup;
+    public RadioGroup radioGroup, radioGroup2;
     public Button enterButton;
     PermutationsNumber permNum = new PermutationsNumber(1, 1);
 
@@ -21,27 +21,38 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        radioGroup=findViewById(R.id.radioGroup);
+        radioGroup=findViewById(R.id.radioGroupRepetition);
+        radioGroup=findViewById(R.id.radioGroupOrder);
         inputTextNumber = findViewById(R.id.inputTextNumber);
-        //inputTextNumber.setSelection(inputTextNumber.length()); //place the cursor at right?
+        inputTextNumber.setSelection(inputTextNumber.length()); //place the cursor at right?
         //https://stackoverflow.com/questions/6217378/place-cursor-at-the-end-of-text-in-edittext
         inputTextNumber2 = findViewById(R.id.inputTextNumber2);
         textViewResult = findViewById(R.id.textview_result);
         enterButton = findViewById(R.id.button_result);
-        RadioButton radioButtonSelection = findViewById(R.id.radio_one);
+        RadioButton radioWithoutRep = findViewById(R.id.radio_without_rep);
+        RadioButton radioWithRep = findViewById(R.id.radio_with_rep);
+        RadioButton radioWithOrder = findViewById(R.id.radio_with_order);
+        RadioButton radioWithoutOrder = findViewById(R.id.radio_without_order);
         enterButton.setOnClickListener(view -> {
             int num1=Integer.parseInt(inputTextNumber.getText().toString());
             int num2=Integer.parseInt(inputTextNumber2.getText().toString());
             permNum.setElementsNumber(num1);
             permNum.setPositionsNumber(num2);
 
-            if (radioButtonSelection.isChecked()) {
+            if (radioWithoutRep.isChecked() && radioWithOrder.isChecked()){
                 if (num1 < num2) {
                     textViewResult.setText("n < k !!!");} else {
                     textViewResult.setText(String.valueOf(permNum.getWithoutRep()));
                 }
-            } else {
+            } else if (radioWithRep.isChecked() && radioWithOrder.isChecked()) {
                 textViewResult.setText(String.valueOf(permNum.getWithRep()));
+            } else if (radioWithoutRep.isChecked() && radioWithoutOrder.isChecked()){
+                if (num1 < num2) {
+                    textViewResult.setText("n < k !!!");} else {
+                    textViewResult.setText(String.valueOf(permNum.getWithoutRepWithoutOrder()));
+                }
+            } else if (radioWithRep.isChecked() && radioWithoutOrder.isChecked()){
+                textViewResult.setText(String.valueOf(permNum.getWithRepWithoutOrder()));
             }
         });
     }

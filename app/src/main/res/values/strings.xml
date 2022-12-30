@@ -5,7 +5,7 @@
     <string name="textView03">Enter Second Number</string>
     <string name="textView04">Elements Number (n)</string>
     <string name="textView05">Positions Number (k)</string>
-    <string name="textView06">Permutations Number</string>
+    <string name="textView06">Permutation Calculator</string>
     <string name="textView07">Without Repetitions</string>
     <string name="textView08">With Repetitions</string>
     <string name="textView09" translatable="false">1</string>
