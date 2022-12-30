@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity{
         radioGroup=findViewById(R.id.radioGroup);
         inputTextNumber = findViewById(R.id.inputTextNumber);
         //inputTextNumber.setSelection(inputTextNumber.length()); //place the cursor at right?
+        //https://stackoverflow.com/questions/6217378/place-cursor-at-the-end-of-text-in-edittext
         inputTextNumber2 = findViewById(R.id.inputTextNumber2);
         textViewResult = findViewById(R.id.textview_result);
         enterButton = findViewById(R.id.button_result);
