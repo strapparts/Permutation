@@ -2,7 +2,6 @@ package com.example.permutations;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,8 +25,9 @@ public class MainActivity extends AppCompatActivity{
         radioGroupOrder=findViewById(R.id.radioGroupOrder);
         inputTextNumber = findViewById(R.id.inputTextNumber);
         inputTextNumber.setSelection(inputTextNumber.getText().length()); //place the cursor at right?
+        inputTextNumber2 = findViewById(R.id.inputTextNumber2); //place the cursor at right?
         //https://stackoverflow.com/questions/6217378/place-cursor-at-the-end-of-text-in-edittext
-        inputTextNumber2 = findViewById(R.id.inputTextNumber2);
+        inputTextNumber2.setSelection(inputTextNumber.getText().length());
         textViewResult = findViewById(R.id.textview_result);
         enterButton = findViewById(R.id.button_result);
         RadioButton radioWithoutRep = findViewById(R.id.radio_without_rep);
