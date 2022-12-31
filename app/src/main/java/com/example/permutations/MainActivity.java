@@ -54,11 +54,11 @@ public class MainActivity extends AppCompatActivity{
             }  else if (radioWithoutRep.isChecked() && radioWithOrder.isChecked()){
                 if (num1 < num2) {
                     textViewResult.setText("n < k !!!");
-                    textViewFormula.setText("n!/(n-k)!");}
+                }
                 else {
                     textViewResult.setText(String.valueOf(permNum.getWithoutRep()));
-                    textViewFormula.setText("n!/(n-k)!");
                 }
+                textViewFormula.setText("n!/(n-k)!");
             } else if (radioWithRep.isChecked() && radioWithOrder.isChecked()) {
                 textViewResult.setText(String.valueOf(permNum.getWithRep()));
                 textViewFormula.setText("n^k");
