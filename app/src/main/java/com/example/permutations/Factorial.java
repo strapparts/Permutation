@@ -11,9 +11,11 @@ public class Factorial {
         }
         return fact;
     }
+    /*
     public long getNumber() {
         return number;
     }
+    */
     public void setNumber(int number) {
         this.number = number;
     }

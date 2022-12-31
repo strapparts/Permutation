@@ -12,8 +12,8 @@
     <string name="textView10">Enter</string>
     <string name="textView11">Order Is Important</string>
     <string name="textView12">"Order Not Is Important "</string>
-    <string name="textView13" translatable="false">3</string>
     <string name="textView14" translatable="false">formula</string>
     <string name="textView15">(Permutation)</string>
     <string name="textView16">(Combination)</string>
+    <string name="textView13">Enter Numbers!</string>
 </resources>
