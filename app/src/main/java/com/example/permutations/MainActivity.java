@@ -1,9 +1,7 @@
 package com.example.permutations;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -11,9 +9,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity{
-
     private EditText inputTextNumber, inputTextNumber2;
-    private TextView textViewResult, textViewFormula, perm, comb;
+    private TextView textViewResult, textViewFormula;
     public RadioGroup radioGroupRep, radioGroupOrder;
     public Button enterButton;
     PermutationsNumber permNum = new PermutationsNumber(1, 1);
@@ -31,8 +28,6 @@ public class MainActivity extends AppCompatActivity{
         //https://stackoverflow.com/questions/6217378/place-cursor-at-the-end-of-text-in-edittext
         textViewResult = findViewById(R.id.textview_result);
         textViewFormula = findViewById(R.id.textView4);
-        perm = findViewById(R.id.textView5);
-        comb = findViewById(R.id.textView6);
         enterButton = findViewById(R.id.button_result);
         RadioButton radioWithoutRep = findViewById(R.id.radio_without_rep);
         RadioButton radioWithRep = findViewById(R.id.radio_with_rep);
@@ -46,14 +41,15 @@ public class MainActivity extends AppCompatActivity{
                 num1 = Integer.parseInt(inputTextNumber.getText().toString());
                 num2 = Integer.parseInt(inputTextNumber2.getText().toString());
             } catch (Exception e){
-                textViewResult.setText("enter numbers!!!");
+                //textViewResult.setText("enter numbers!!!");
             }
 //https://stackoverflow.com/questions/53784754/my-app-crashes-when-an-edittext-is-empty-and-i-press-a-button
             permNum.setElementsNumber(num1);
             permNum.setPositionsNumber(num2);
 
             if (inputTextNumber.getText().toString().isEmpty() || inputTextNumber2.getText().toString().isEmpty()){
-                textViewResult.setText("enter numbers!");
+                //textViewResult.setText("enter numbers!");
+                textViewResult.setText(getResources().getString(R.string.textView13));
                 textViewFormula.setText("");
             }  else if (radioWithoutRep.isChecked() && radioWithOrder.isChecked()){
                 if (num1 < num2) {
